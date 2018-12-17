@@ -5,8 +5,9 @@ class Building
 	end
 end
 
-class Winnery < Building
+class Winery < Building
 	def initialize
+		@building_age = 0
 		@plants = Hash.new{|hsh,key| hsh[key] = {} }
 		@workers = Hash.new{|hsh,key| hsh[key] = {} }
 	end
@@ -33,6 +34,6 @@ class Winnery < Building
 
 	# OTHER
 	def cycle_day
-		return 0
+		@building_age = @building_age + 1
 	end
 end
