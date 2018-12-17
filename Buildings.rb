@@ -18,8 +18,8 @@ class Winnery < Building
 	end
 
 	def new_worker(wname, hp, age)
-		@plants[wname].store 'hp',hp
-		@plants[wname].store 'age',age
+		@worker[wname].store 'hp',hp
+		@worker[wname].store 'age',age
 	end
 
 	def plants_stats

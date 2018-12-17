@@ -1,23 +1,26 @@
 require './Buildings.rb'
 
-# Set
-@wine01 = Winnery.new # Spawn new intance of The Winnery Building / development stage
+@wine01 = Winnery.new
 
-def user_input_matrix
+def user_cmd_matrix
 	case gets.chomp
-	when "n" # Spawn a new plant
-		@wine01.new_plant(gets.chomp, 10, 1, 1) # Plant Name / HP / Age
-	when "l" # Plants list
+	when "np" # new plant
+		@wine01.new_plant(gets.chomp, 10, 1, 1) # Plant Name / HP / Age / Leaves
+	when 'nw' # new worker
+		@wine01.new_worker(gets.chomp, 100, 17) # Plant Name / HP / Age
+	when "lp" # list plants
 		puts @wine01.plants_stats
-	when 'q' # Quit
+	when 'lw' # list workers
+		puts @wine01.worker_stats
+	when 'q' # quit / break main loop
 		$i = 0
 	else
-		puts "unknown command"
+		puts "Available commands: np - new plant / lp - list plants / lw - worker stats / q - quit"
 	end
 end
 
-# Main loop
+# main loop
 $i = 1
 while $i > 0  do
-	user_input_matrix
+	user_cmd_matrix
 end
