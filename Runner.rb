@@ -1,6 +1,6 @@
 require './Buildings.rb'
 
-@wine01 = Winnery.new
+@wine01 = Winery.new
 
 def cmd_matrix
 	case gets.chomp
