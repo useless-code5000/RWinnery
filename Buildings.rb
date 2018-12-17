@@ -11,22 +11,29 @@ class Winnery < Building
 		@worker = Hash.new{|hsh,key| hsh[key] = {} }
 	end
 
-	def new_plant(pname, hp, age, leaves)
-		@plants[pname].store 'hp',hp
-		@plants[pname].store 'age',age
-		@plants[pname].store 'leaves',leaves
-	end
-
-	def new_worker(wname, hp, age)
-		@worker[wname].store 'hp',hp
-		@worker[wname].store 'age',age
+	# RETURNS
+	def worker_stats
+		return @worker
 	end
 
 	def plants_stats
 		return @plants
 	end
 
-	def worker_stats
-		return @worker
+	# CREATION
+	def new_worker(wname, hp, age)
+		@worker[wname].store 'hp',hp
+		@worker[wname].store 'age',age
+	end
+
+	def new_plant(pname, hp, age, leaves)
+		@plants[pname].store 'hp',hp
+		@plants[pname].store 'age',age
+		@plants[pname].store 'leaves',leaves
+	end
+
+	# OTHER
+	def cycle_day
+		return 0
 	end
 end
