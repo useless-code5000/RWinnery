@@ -1,24 +1,14 @@
 require './Buildings.rb'
 
-def debugger
-	puts "[DEBUG]"
-end
-
-# Set - Development
+# Set
 @wine01 = Winnery.new # Spawn new intance of The Winnery Building / development stage
-
-# Interface
-def output(info)
-	puts "Requested Data: #{info}"
-	puts "---------------"
-end
 
 def user_input_matrix
 	case gets.chomp
 	when "n" # Spawn a new plant
 		@wine01.new_plant(gets.chomp, 10, 1, 1) # Plant Name / HP / Age
 	when "l" # Plants list
-		output(@wine01.plants_stats)
+		puts @wine01.plants_stats
 	when 'q' # Quit
 		$i = 0
 	else
