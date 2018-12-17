@@ -8,12 +8,12 @@ end
 class Winnery < Building
 	def initialize
 		@plants = Hash.new{|hsh,key| hsh[key] = {} }
-		@worker = Hash.new{|hsh,key| hsh[key] = {} }
+		@workers = Hash.new{|hsh,key| hsh[key] = {} }
 	end
 
 	# RETURNS
-	def worker_stats
-		return @worker
+	def workers_stats
+		return @workers
 	end
 
 	def plants_stats
@@ -21,9 +21,8 @@ class Winnery < Building
 	end
 
 	# CREATION
-	def new_worker(wname, hp, age)
-		@worker[wname].store 'hp',hp
-		@worker[wname].store 'age',age
+	def new_worker(wname, age)
+		@workers[wname].store 'age',age
 	end
 
 	def new_plant(pname, hp, age, leaves)
