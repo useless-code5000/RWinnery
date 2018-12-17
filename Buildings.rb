@@ -4,8 +4,8 @@ require "./Plant.rb" # This is needed for grower type buildings: winnery, farmer
 # Other buildings classes inherit from this one.
 class Building
 	def initialize
-		@state = 1 # 1 = up and ready 2 = in progress
-		@type = 3 # 1 = small 2 = residential # 3 = castle
+		@state = 1 # 1 = ready 2 = in progress
+		@type = 1 # 1 = small 2 = residential # 3 = castle
 	end
 end
 
@@ -16,17 +16,17 @@ class Winnery < Building
 		@worker = Hash.new{|hsh,key| hsh[key] = {} }
 	end
 
-##### Plants section #################################
+	def write_to_plants
+		return 0
+	end
+# Plants section #####################################
 	def new_plant(pname, hp, age, leaves)
 		@plants[pname].store 'hp',hp
-	end
-
-	def grow_plant
-		@plant.age_increment
+		@plants[pname].store 'age',age
+		@plants[pname].store 'leaves',age
 	end
 ######################################################
-
-	def building_stats
-		puts @plants
+	def plants_stats
+		return @plants
 	end
 end
