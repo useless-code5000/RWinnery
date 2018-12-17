@@ -5,19 +5,21 @@ require './Buildings.rb'
 def cmd_matrix
 	case gets.chomp
 	when "np" # new plant
-		@wine01.new_plant(gets.chomp, rand(1..10), 1, 1) # Name / HP / Age / Leaves
+		@wine01.new_plant(gets.chomp, rand(1..100), 1, 1) # Name / HP / Age / Leaves
 	when 'nw' # new worker
-		@wine01.new_worker(gets.chomp, 17) # Name / Age
+		@wine01.new_worker(gets.chomp, 22) # Name / Age
 	when "lp" # list plants
 		puts @wine01.plants_stats
 	when 'lw' # list workers
 		puts @wine01.workers_stats
-	when 'grow' # push time forward 1day
-		puts @wine01.cycle_day
+	when 'c' # cycle / push time forward 1y
+		puts @wine01.cycle
 	when 'q' # quit / break main loop
 		$i = 0
 	else
-		puts "ACMD: np - new plant / nw - new worker / lp - list plants / lw - worker stats / q - quit"
+		puts "Building Age: #{@wine01.building_age}"
+		puts "Plants: #{@wine01.plants_stats}"
+		puts "Workers: #{@wine01.workers_stats}"
 	end
 end
 
