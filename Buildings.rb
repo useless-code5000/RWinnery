@@ -1,3 +1,5 @@
+
+
 class Building
 	def initialize
 		@state = 1 # 1 = ready 2 = issue
@@ -40,6 +42,5 @@ class Winery < Building
 	# OTHER
 	def cycle
 		@building_age = @building_age + 1
-		# increment_plants_age {[*][age: value+1]}
 	end
 end
