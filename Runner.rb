@@ -1,4 +1,5 @@
-require './Buildings.rb'
+require './Places.rb'
+require './Plants.rb'
 
 @wine01 = Winery.new
 
@@ -6,7 +7,7 @@ def cmd_matrix
 	print "> "
 	case gets.chomp
 	when "np" # new plant
-		@wine01.new_plant(gets.chomp, rand(1..100), 1, 1) # Name / HP / Age / Leaves
+		@wine01.new_plant(gets.chomp, rand(1..100), 1, 1, 0) # Name / HP / Age / Leaves / raceme
 	when 'nw' # new worker
 		@wine01.new_worker(gets.chomp, 22) # Name / Age
 	when "lp" # list plants
