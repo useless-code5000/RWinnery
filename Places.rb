@@ -1,13 +1,7 @@
 
-
-class Building
-	def initialize
-		@space = 10 # how many bottles could keep
-	end
-end
-
-class Winery < Building
-	def initialize
+class Winery
+	def initialize(space=10)
+		@space = space
 		@wine_bottles = Hash.new{|hsh,key| hsh[key] = {} }
 	end
 
@@ -15,16 +9,17 @@ class Winery < Building
 	def return_building_age; return @building_age; end
 	def cycle; @building_age = @building_age + 1; end
 
-	def new_bottle(bname, colour, year, size)
-		@wine_bottles[bname].store 'colour',colour
-		@wine_bottles[bname].store 'year',year
-		@wine_bottles[bname].store 'size',size
+	def new_bottle(wine_name, colour, year, size)
+		@wine_bottles[wine_name].store 'colour',colour
+		@wine_bottles[wine_name].store 'year',year
+		@wine_bottles[wine_name].store 'size',size
 	end
 end
 
 class Field
-	def initialize
-		@size = 3 # 3 = 3 plants
+	def initialize(region="Abruzzo", size=3)
+		@region = region
+		@size = size # 3 = 3 plants
 		@workers = Hash.new{|hsh,key| hsh[key] = {} } # Workers on field
 	end
 
