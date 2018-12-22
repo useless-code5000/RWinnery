@@ -1,4 +1,4 @@
-# RWinnery
+# RWinery
 
 * np - new plant
 * nw - new worker
