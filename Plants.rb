@@ -1,11 +1,8 @@
-class Grape_Plant
-	def initialize
-		@shared = 1
-	end
-end
-
-class Montepulcianodabruzzo < Grape_Plant
-	def initialize
-		@specific = 1
+class Montepulciano
+	def initialize(size=1, pname, leaves=1, grapes=0 )
+		@size = size
+		@pname = pname
+		@leaves = leaves
+		@grapes = grapes
 	end
 end
